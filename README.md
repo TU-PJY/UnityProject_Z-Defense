@@ -1,342 +1,343 @@
-# 프로젝트 스크립트 폴더 트리
-  
-``` text
-├── Prefabs
-│   ├── ButtonAutoExecute
-│   │   └── ButtonAutoExecute.cs
-│   ├── Damageable
-│   │   ├── BossZombie
-│   │   │   ├── Behavior
-│   │   │   │   ├── BossZombieEnum.cs
-│   │   │   │   ├── CheckObstacleAction.cs
-│   │   │   │   ├── NullCheckCondition.cs
-│   │   │   │   ├── PlusIntAction.cs
-│   │   │   │   ├── SearchTargetAction.cs
-│   │   │   │   ├── StayAction.cs
-│   │   │   │   ├── StayAndSetBoolInAnimOnEndAction.cs
-│   │   │   │   └── StayAndSetIntOnEndAction.cs
-│   │   │   ├── BossZombie.cs
-│   │   │   └── BossZombieSpec.cs
-│   │   ├── NormalZombie
-│   │   │   ├── NormalZombie.cs
-│   │   │   ├── NormalZombieAttackCollider.cs
-│   │   │   └── NormalZombieSpec.cs
-│   │   ├── Obstacle
-│   │   │   ├── Editor
-│   │   │   │   ├── ObstacleUpgradeCostCsvEditorTool.cs
-│   │   │   │   └── ObstacleUpgradePopupUICreator.cs
-│   │   │   ├── SO
-│   │   │   │   └── Scripts
-│   │   │   │       ├── ObstacleBuildEntrySO.cs
-│   │   │   │       ├── ObstacleDefinitionSO.cs
-│   │   │   │       ├── ObstaclePrefabProgressionSO.cs
-│   │   │   │       ├── ObstacleSpec.cs
-│   │   │   │       └── ObstacleUpgradeCostProfileSO.cs
-│   │   │   ├── Obstacle.cs
-│   │   │   ├── ObstacleBuildSlot.cs
-│   │   │   ├── ObstaclePlacementController.cs
-│   │   │   ├── ObstaclePlacementSlotUI.cs
-│   │   │   ├── ObstaclePlacementUI.cs
-│   │   │   ├── ObstacleUpgradePopupUI.cs
-│   │   │   └── ObstacleUpgradeRuntimeController.cs
-│   │   └── IDamageable.cs
-│   ├── DropItemSystem
-│   │   ├── DropItem.cs
-│   │   ├── DropItemIndicator.cs
-│   │   ├── DropItemParticle.cs
-│   │   ├── ItemDropper.cs
-│   │   └── ItemPickupParticle.cs
-│   ├── ExitAskPannel
-│   │   └── ExitAskPannel.cs
-│   ├── HpUI
-│   │   └── HpUI.cs
-│   ├── InventorySystem
-│   │   ├── Editor
-│   │   │   └── InventorySystemEditor.cs
-│   │   ├── InventorySystem.cs
-│   │   ├── ItemMetaDataListSo.cs
-│   │   ├── ItemMetaDataSo.cs
-│   │   └── ItemSellBuyCostSo.cs
-│   ├── InventoryUI
-│   │   ├── InventoryUI.cs
-│   │   └── PassEventToScrollRect.cs
-│   ├── Survivor
-│   │   ├── Editor
-│   │   │   └── SurvivorInteractionUICreator.cs
-│   │   ├── EngineerBuffTargetButton.cs
-│   │   ├── EngineerBuffTargetPanelUI.cs
-│   │   ├── Survivor.cs
-│   │   ├── SurvivorInteractionController.cs
-│   │   ├── SurvivorRescueSpawner.cs
-│   │   ├── SurvivorRescueSpawnProfileSO.cs
-│   │   ├── SurvivorRole.cs
-│   │   └── SurvivorSpec.cs
-│   ├── TitlePannel
-│   │   └── TitlePannel.cs
-│   ├── TransactionUI
-│   │   └── TransactionUI.cs
-│   ├── WorldUI
-│   │   ├── WorldUIAnimation.cs
-│   │   └── WorldUIHandler.cs
-│   ├── ZombieDeathParticle
-│   │   └── CoinParticleCreator.cs
-│   └── ZombieSpawner
-│       ├── ZombieSpawner.cs
-│       ├── ZombieType.cs
-│       └── ZombieWaveSpawnProfileSO.cs
-├── Scenes
-│   ├── KKW
-│   │   └── Turret_Scene
-│   │       ├── Editor
-│   │       │   ├── TurretBalanceReportWindow.Calculation.cs
-│   │       │   ├── TurretBalanceReportWindow.cs
-│   │       │   ├── TurretBalanceReportWindow.Csv.cs
-│   │       │   ├── TurretBalanceReportWindow.CurrencyProjection.cs
-│   │       │   ├── TurretBalanceReportWindow.Graph.cs
-│   │       │   ├── TurretBalanceReportWindow.Input.cs
-│   │       │   ├── TurretBalanceReportWindow.Obstacle.Calculation.cs
-│   │       │   ├── TurretBalanceReportWindow.Obstacle.Table.cs
-│   │       │   ├── TurretBalanceReportWindow.Table.cs
-│   │       │   ├── TurretBalanceReportWindow.TableModel.cs
-│   │       │   ├── TurretBalanceReportWindow.Types.cs
-│   │       │   ├── TurretDataCsvEditorTool.cs
-│   │       │   ├── TurretEconomySimulationCalculator.cs
-│   │       │   ├── TurretEconomyValidator.cs
-│   │       │   ├── TurretEvolutionCostCsvEditorTool.cs
-│   │       │   ├── TurretEvolutionGraphBuilder.cs
-│   │       │   ├── TurretSpecialAbilityDpsCalculator.cs
-│   │       │   ├── TurretSpeciesDetailCalculator.cs
-│   │       │   ├── TurretWaveClearRankingCalculator.cs
-│   │       │   ├── TurretWaveRuntimeAnalyzer.cs
-│   │       │   └── ZombieRewardExpectationCalculator.cs
-│   │       └── Scripts
-│   │           ├── Placement
-│   │           │   ├── TurretBaseSlot.cs
-│   │           │   ├── TurretPlacementController.cs
-│   │           │   ├── TurretPlacementPreview.cs
-│   │           │   ├── TurretPlacementSlotUI.cs
-│   │           │   ├── TurretPlacementUI.cs
-│   │           │   ├── TurretSelectionLayerUtility.cs
-│   │           │   └── TurretShopEntrySO.cs
-│   │           ├── UI
-│   │           │   ├── DamageMeter
-│   │           │   │   ├── TurretDamageMeterColorProfileSO.cs
-│   │           │   │   ├── TurretDamageMeterManager.cs
-│   │           │   │   ├── TurretDamageMeterRowUI.cs
-│   │           │   │   ├── TurretDamageMeterSource.cs
-│   │           │   │   └── TurretDamageMeterUI.cs
-│   │           │   ├── TechTree
-│   │           │   │   ├── TurretTechTreeDetailPopupUI.cs
-│   │           │   │   ├── TurretTechTreeLineUI.cs
-│   │           │   │   ├── TurretTechTreeNodeState.cs
-│   │           │   │   ├── TurretTechTreeNodeUI.cs
-│   │           │   │   ├── TurretTechTreeOpenButton.cs
-│   │           │   │   ├── TurretTechTreeUIController.cs
-│   │           │   │   ├── TurretTechTreeViewProfileSO.cs
-│   │           │   │   └── TurretTechTreeZoomController.cs
-│   │           │   ├── TurretCurrencyDisplayUtility.cs
-│   │           │   ├── TurretDetailPopupUI.cs
-│   │           │   ├── TurretEvolutionCandidatePressForwarder.cs
-│   │           │   ├── TurretEvolutionPopupUI.cs
-│   │           │   ├── TurretFeedbackPopupSettings.cs
-│   │           │   ├── TurretInfoPopupUI.cs
-│   │           │   ├── TurretItemDescriptionOpenButton.cs
-│   │           │   ├── TurretItemDescriptionPopupUI.cs
-│   │           │   ├── TurretItemDescriptionRelationSlotUI.cs
-│   │           │   ├── TurretPopupPageUI.cs
-│   │           │   ├── TurretSelectionContext.cs
-│   │           │   ├── TurretSelectionUIController.cs
-│   │           │   ├── TurretSelectPopupUI.cs
-│   │           │   ├── TurretSkillPopupUI.cs
-│   │           │   └── TurretUpgradePopupUI.cs
-│   │           ├── BeamAttackProfileSO.cs
-│   │           ├── BeamFiringEvent.cs
-│   │           ├── DetachedPooledChildReturner.cs
-│   │           ├── ElectroChainCoreLineEffect.cs
-│   │           ├── ElectroChainLightningUtility.cs
-│   │           ├── ElectroChainLinkAnchorTracker.cs
-│   │           ├── ElectroChainLinkEffectUtility.cs
-│   │           ├── ElectroStatusProfileSO.cs
-│   │           ├── ElectroTurretStatGrowthProfileSO.cs
-│   │           ├── EnemyPatrolMover.cs
-│   │           ├── FrostFreezeExplosionDamageTimer.cs
-│   │           ├── FrostStatusEffectUtility.cs
-│   │           ├── FrostStatusProfileSO.cs
-│   │           ├── HovlProjectileHitEffectUtility.cs
-│   │           ├── HovlProjectilePierceGuard.cs
-│   │           ├── IElectroStatusEffectReceiver.cs
-│   │           ├── IFrostStatusEffectReceiver.cs
-│   │           ├── IgnitionConeDetector.cs
-│   │           ├── IgnitionDamageApplier.cs
-│   │           ├── IgnitionStatusProfileSO.cs
-│   │           ├── IgnitionTurretStatGrowthProfileSO.cs
-│   │           ├── IIgnitionStatusEffectReceiver.cs
-│   │           ├── IPoisonStatusEffectReceiver.cs
-│   │           ├── ITurretRuntimeStatReceiver.cs
-│   │           ├── ITurretStatusProfileReceiver.cs
-│   │           ├── LevelHoldButton.cs
-│   │           ├── PoisonDeathBurstEffectUtility.cs
-│   │           ├── PoisonDeathBurstProfileSO.cs
-│   │           ├── PoisonStatusProfileSO.cs
-│   │           ├── PoisonStatusRuntimeUtility.cs
-│   │           ├── PoisonTurretStatGrowthProfileSO.cs
-│   │           ├── PooledEffectReturner.cs
-│   │           ├── PooledProjectileReturner.cs
-│   │           ├── ProjectileBoundary.cs
-│   │           ├── ProjectileComponentCache.cs
-│   │           ├── ProjectileDamageDealer.cs
-│   │           ├── ProjectileHitDetector.cs
-│   │           ├── TestDamageableTarget.cs
-│   │           ├── TurretAimPointUtility.cs
-│   │           ├── TurretDamagePolishProfileSO.cs
-│   │           ├── TurretDamagePolishResult.cs
-│   │           ├── TurretDefinitionRuntimeController.cs
-│   │           ├── TurretDefinitionSO.cs
-│   │           ├── TurretEconomyLogUtility.cs
-│   │           ├── TurretEngineerBuffReceiver.cs
-│   │           ├── TurretEvolutionProgressionSO.cs
-│   │           ├── TurretEvolutionRuntimeUI.cs
-│   │           ├── TurretLeadPredictionUtility.cs
-│   │           ├── TurretProjectileScaleProgressionSO.cs
-│   │           ├── TurretRangeIndicator.cs
-│   │           ├── TurretRankBand.cs
-│   │           ├── TurretRankBillboard.cs
-│   │           ├── TurretRankDisplayController.cs
-│   │           ├── TurretRankDisplayProfileSO.cs
-│   │           ├── TurretRuntimeStat.cs
-│   │           ├── TurretStatCalculator.cs
-│   │           ├── TurretStatGrowthProfileSO.cs
-│   │           ├── TurretStatProfileApplier.cs
-│   │           ├── TurretStatProfileSO.cs
-│   │           ├── TurretUpgradeCostProfileSO.cs
-│   │           ├── TurretVFXProfileSO.cs
-│   │           └── TurretVFXProgressionSO.cs
-│   └── PJY
-│       ├── CubeSpawnTest.cs
-│       ├── EventSystemDebugger.cs
-│       └── ItemDropTest.cs
-├── Scripts
-│   ├── Audio
-│   │   ├── AudioCueSO.cs
-│   │   ├── ITurretAudioEventPlayer.cs
-│   │   ├── PooledAudioSource.cs
-│   │   ├── ProjectAudioBus.cs
-│   │   ├── ProjectAudioFeelBridge.cs
-│   │   ├── ProjectAudioHandle.cs
-│   │   ├── ProjectAudioManager.cs
-│   │   ├── ProjectAudioPlaybackMode.cs
-│   │   ├── ProjectAudioVolumeSlider.cs
-│   │   ├── ProjectAudioVolumeTarget.cs
-│   │   ├── ProjectBgmPlayer.cs
-│   │   ├── TurretAudioController.cs
-│   │   ├── TurretAudioEvent.cs
-│   │   ├── TurretAudioFireEventRelay.cs
-│   │   ├── TurretAudioProfileSO.cs
-│   │   └── UIButtonAudioFeedback.cs
-│   ├── CameraTools
-│   │   ├── CameraController.cs
-│   │   └── CameraTouchHandler.cs
-│   ├── Editor
-│   │   ├── ItemDataEditorTool.cs
-│   │   ├── RewardCurrencyTypeDrawer.cs
-│   │   └── ZombieBalanceCsvEditorTool.cs
-│   ├── Rewards
-│   │   ├── BillboardUtil.cs
-│   │   ├── ResourceCost.cs
-│   │   ├── RewardCurrencyType.cs
-│   │   ├── RewardEntry.cs
-│   │   ├── RewardGrantUtility.cs
-│   │   ├── RewardResult.cs
-│   │   ├── ZombieRewardContext.cs
-│   │   ├── ZombieRewardModifier.cs
-│   │   ├── ZombieRewardProfileSO.cs
-│   │   ├── ZombieRewardSituation.cs
-│   │   ├── ZombieWaveDpsMeasurementProfileSO.cs
-│   │   └── ZombieWaveDpsRuntimeRecorder.cs
-│   ├── SellerTruck
-│   │   └── SellerTruckMovement.cs
-│   ├── Singleton
-│   │   ├── DisplayManager
-│   │   │   └── DisplayManager.cs
-│   │   ├── DropItemManager
-│   │   │   └── DropItemManager.cs
-│   │   ├── FeelManager
-│   │   │   └── FeelManager.cs
-│   │   ├── GameManager
-│   │   │   └── GameManager.cs
-│   │   ├── MemoryPool
-│   │   │   ├── MemoryPool.cs
-│   │   │   └── MemoryPoolPrewarmer.cs
-│   │   ├── SaveManager
-│   │   │   ├── ISaveable.cs
-│   │   │   └── SaveManager.cs
-│   │   └── UISoundPlayer
-│   │       └── UISoundPlayer.cs
-│   ├── StatusEffects
-│   │   ├── Editor
-│   │   │   └── StatusEffectVisualSlotDrawer.cs
-│   │   ├── ElectroShockStackVisualFader.cs
-│   │   ├── ElectroShockStackVisualModeController.cs
-│   │   ├── ElectroStatusRuntime.cs
-│   │   ├── FrostStatusRuntime.cs
-│   │   ├── IgnitionStatusRuntime.cs
-│   │   ├── PoisonStatusRuntime.cs
-│   │   ├── StatusEffectVisualAlphaFader.cs
-│   │   └── StatusEffectVisualController.cs
-│   ├── Targeting
-│   │   ├── ElectroShockTargetCandidateFilter.cs
-│   │   ├── FrostFreezeSuppressedTargetCandidateFilter.cs
-│   │   ├── IAimPointProvider.cs
-│   │   ├── IgnitionBurningTargetCandidateFilter.cs
-│   │   ├── ITargetCandidateFilter.cs
-│   │   ├── PoisonLethalTargetCandidateFilter.cs
-│   │   └── StickyCurrentTargetRetentionFilter.cs
-│   ├── UI
-│   │   ├── DropItemGetLog
-│   │   │   ├── DropItemGetLog.cs
-│   │   │   └── DropItemGetLogText.cs
-│   │   ├── Editor
-│   │   │   └── GameOverPanelUICreator.cs
-│   │   ├── ItemUI
-│   │   │   └── ItemIndicator.cs
-│   │   ├── MenuUI
-│   │   │   ├── MainMenuButton.cs
-│   │   │   └── MainMenuUI.cs
-│   │   ├── PowerSavingButton
-│   │   │   └── PowerSavingButton.cs
-│   │   ├── PowerSavingSwitcher
-│   │   │   └── PowerSavingSwitcher.cs
-│   │   ├── TimeScaleButton
-│   │   │   └── TimeScaleButton.cs
-│   │   ├── TransactionUI
-│   │   │   └── TransactionPopup.cs
-│   │   ├── WaveUI
-│   │   │   ├── WaveIndicator.cs
-│   │   │   └── WavePopup.cs
-│   │   ├── WorldUI
-│   │   │   └── WorldButton.cs
-│   │   ├── BillboardCanvas.cs
-│   │   ├── GameOverPanelUI.cs
-│   │   ├── TouchBackHandler.cs
-│   │   ├── UIAnimationValues.cs
-│   │   ├── UIManager.cs
-│   │   ├── WarningPopup.cs
-│   │   └── WarningPopupManager.cs
-│   ├── DamageInfo.cs
-│   ├── DamagePopupPolicy.cs
-│   ├── DamagePopupPolicyProfileSO.cs
-│   ├── DamagePopupPolicyResolver.cs
-│   ├── DamagePopupSettings.cs
-│   ├── DamagePopupSpawner.cs
-│   ├── DamagePopupTargetType.cs
-│   ├── DamagePopupType.cs
-│   ├── DisableAfterSeconds.cs
-│   ├── DnpDamagePopupBackend.cs
-│   └── IDamagePopupRenderBackend.cs
-├── PROJECT_README.cs
-├── REWARD_CURRENCY_SYSTEM_PLAN.cs
-├── STATUS_EFFECT_SYSTEM_README.cs
-├── TeamCodingConvention.cs
-├── TURRET_DATA_STRUCTURE_PLAN.cs
-└── TURRET_UI_REWORK_PLAN.cs
-```
+# 프로젝트 스크립트 폴더 트리  
+*에셋 및 라이브러리 스크립트 미포함
+<pre>
+<a href="./">ProjectScripts</a>
+├── <a href="./Prefabs">Prefabs</a>
+│   ├── <a href="./Prefabs/ButtonAutoExecute">ButtonAutoExecute</a>
+│   │   └── <a href="./Prefabs/ButtonAutoExecute/ButtonAutoExecute.cs">ButtonAutoExecute.cs</a>
+│   ├── <a href="./Prefabs/Damageable">Damageable</a>
+│   │   ├── <a href="./Prefabs/Damageable/BossZombie">BossZombie</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/BossZombie/Behavior">Behavior</a>
+│   │   │   │   ├── <a href="./Prefabs/Damageable/BossZombie/Behavior/BossZombieEnum.cs">BossZombieEnum.cs</a>
+│   │   │   │   ├── <a href="./Prefabs/Damageable/BossZombie/Behavior/CheckObstacleAction.cs">CheckObstacleAction.cs</a>
+│   │   │   │   ├── <a href="./Prefabs/Damageable/BossZombie/Behavior/NullCheckCondition.cs">NullCheckCondition.cs</a>
+│   │   │   │   ├── <a href="./Prefabs/Damageable/BossZombie/Behavior/PlusIntAction.cs">PlusIntAction.cs</a>
+│   │   │   │   ├── <a href="./Prefabs/Damageable/BossZombie/Behavior/SearchTargetAction.cs">SearchTargetAction.cs</a>
+│   │   │   │   ├── <a href="./Prefabs/Damageable/BossZombie/Behavior/StayAction.cs">StayAction.cs</a>
+│   │   │   │   ├── <a href="./Prefabs/Damageable/BossZombie/Behavior/StayAndSetBoolInAnimOnEndAction.cs">StayAndSetBoolInAnimOnEndAction.cs</a>
+│   │   │   │   └── <a href="./Prefabs/Damageable/BossZombie/Behavior/StayAndSetIntOnEndAction.cs">StayAndSetIntOnEndAction.cs</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/BossZombie/BossZombie.cs">BossZombie.cs</a>
+│   │   │   └── <a href="./Prefabs/Damageable/BossZombie/BossZombieSpec.cs">BossZombieSpec.cs</a>
+│   │   ├── <a href="./Prefabs/Damageable/NormalZombie">NormalZombie</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/NormalZombie/NormalZombie.cs">NormalZombie.cs</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/NormalZombie/NormalZombieAttackCollider.cs">NormalZombieAttackCollider.cs</a>
+│   │   │   └── <a href="./Prefabs/Damageable/NormalZombie/NormalZombieSpec.cs">NormalZombieSpec.cs</a>
+│   │   ├── <a href="./Prefabs/Damageable/Obstacle">Obstacle</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/Obstacle/Editor">Editor</a>
+│   │   │   │   ├── <a href="./Prefabs/Damageable/Obstacle/Editor/ObstacleUpgradeCostCsvEditorTool.cs">ObstacleUpgradeCostCsvEditorTool.cs</a>
+│   │   │   │   └── <a href="./Prefabs/Damageable/Obstacle/Editor/ObstacleUpgradePopupUICreator.cs">ObstacleUpgradePopupUICreator.cs</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/Obstacle/SO">SO</a>
+│   │   │   │   └── <a href="./Prefabs/Damageable/Obstacle/SO/Scripts">Scripts</a>
+│   │   │   │       ├── <a href="./Prefabs/Damageable/Obstacle/SO/Scripts/ObstacleBuildEntrySO.cs">ObstacleBuildEntrySO.cs</a>
+│   │   │   │       ├── <a href="./Prefabs/Damageable/Obstacle/SO/Scripts/ObstacleDefinitionSO.cs">ObstacleDefinitionSO.cs</a>
+│   │   │   │       ├── <a href="./Prefabs/Damageable/Obstacle/SO/Scripts/ObstaclePrefabProgressionSO.cs">ObstaclePrefabProgressionSO.cs</a>
+│   │   │   │       ├── <a href="./Prefabs/Damageable/Obstacle/SO/Scripts/ObstacleSpec.cs">ObstacleSpec.cs</a>
+│   │   │   │       └── <a href="./Prefabs/Damageable/Obstacle/SO/Scripts/ObstacleUpgradeCostProfileSO.cs">ObstacleUpgradeCostProfileSO.cs</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/Obstacle/Obstacle.cs">Obstacle.cs</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/Obstacle/ObstacleBuildSlot.cs">ObstacleBuildSlot.cs</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/Obstacle/ObstaclePlacementController.cs">ObstaclePlacementController.cs</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/Obstacle/ObstaclePlacementSlotUI.cs">ObstaclePlacementSlotUI.cs</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/Obstacle/ObstaclePlacementUI.cs">ObstaclePlacementUI.cs</a>
+│   │   │   ├── <a href="./Prefabs/Damageable/Obstacle/ObstacleUpgradePopupUI.cs">ObstacleUpgradePopupUI.cs</a>
+│   │   │   └── <a href="./Prefabs/Damageable/Obstacle/ObstacleUpgradeRuntimeController.cs">ObstacleUpgradeRuntimeController.cs</a>
+│   │   └── <a href="./Prefabs/Damageable/IDamageable.cs">IDamageable.cs</a>
+│   ├── <a href="./Prefabs/DropItemSystem">DropItemSystem</a>
+│   │   ├── <a href="./Prefabs/DropItemSystem/DropItem.cs">DropItem.cs</a>
+│   │   ├── <a href="./Prefabs/DropItemSystem/DropItemIndicator.cs">DropItemIndicator.cs</a>
+│   │   ├── <a href="./Prefabs/DropItemSystem/DropItemParticle.cs">DropItemParticle.cs</a>
+│   │   ├── <a href="./Prefabs/DropItemSystem/ItemDropper.cs">ItemDropper.cs</a>
+│   │   └── <a href="./Prefabs/DropItemSystem/ItemPickupParticle.cs">ItemPickupParticle.cs</a>
+│   ├── <a href="./Prefabs/ExitAskPannel">ExitAskPannel</a>
+│   │   └── <a href="./Prefabs/ExitAskPannel/ExitAskPannel.cs">ExitAskPannel.cs</a>
+│   ├── <a href="./Prefabs/HpUI">HpUI</a>
+│   │   └── <a href="./Prefabs/HpUI/HpUI.cs">HpUI.cs</a>
+│   ├── <a href="./Prefabs/InventorySystem">InventorySystem</a>
+│   │   ├── <a href="./Prefabs/InventorySystem/Editor">Editor</a>
+│   │   │   └── <a href="./Prefabs/InventorySystem/Editor/InventorySystemEditor.cs">InventorySystemEditor.cs</a>
+│   │   ├── <a href="./Prefabs/InventorySystem/InventorySystem.cs">InventorySystem.cs</a>
+│   │   ├── <a href="./Prefabs/InventorySystem/ItemMetaDataListSo.cs">ItemMetaDataListSo.cs</a>
+│   │   ├── <a href="./Prefabs/InventorySystem/ItemMetaDataSo.cs">ItemMetaDataSo.cs</a>
+│   │   └── <a href="./Prefabs/InventorySystem/ItemSellBuyCostSo.cs">ItemSellBuyCostSo.cs</a>
+│   ├── <a href="./Prefabs/InventoryUI">InventoryUI</a>
+│   │   ├── <a href="./Prefabs/InventoryUI/InventoryUI.cs">InventoryUI.cs</a>
+│   │   └── <a href="./Prefabs/InventoryUI/PassEventToScrollRect.cs">PassEventToScrollRect.cs</a>
+│   ├── <a href="./Prefabs/Survivor">Survivor</a>
+│   │   ├── <a href="./Prefabs/Survivor/Editor">Editor</a>
+│   │   │   └── <a href="./Prefabs/Survivor/Editor/SurvivorInteractionUICreator.cs">SurvivorInteractionUICreator.cs</a>
+│   │   ├── <a href="./Prefabs/Survivor/EngineerBuffTargetButton.cs">EngineerBuffTargetButton.cs</a>
+│   │   ├── <a href="./Prefabs/Survivor/EngineerBuffTargetPanelUI.cs">EngineerBuffTargetPanelUI.cs</a>
+│   │   ├── <a href="./Prefabs/Survivor/Survivor.cs">Survivor.cs</a>
+│   │   ├── <a href="./Prefabs/Survivor/SurvivorInteractionController.cs">SurvivorInteractionController.cs</a>
+│   │   ├── <a href="./Prefabs/Survivor/SurvivorRescueSpawner.cs">SurvivorRescueSpawner.cs</a>
+│   │   ├── <a href="./Prefabs/Survivor/SurvivorRescueSpawnProfileSO.cs">SurvivorRescueSpawnProfileSO.cs</a>
+│   │   ├── <a href="./Prefabs/Survivor/SurvivorRole.cs">SurvivorRole.cs</a>
+│   │   └── <a href="./Prefabs/Survivor/SurvivorSpec.cs">SurvivorSpec.cs</a>
+│   ├── <a href="./Prefabs/TitlePannel">TitlePannel</a>
+│   │   └── <a href="./Prefabs/TitlePannel/TitlePannel.cs">TitlePannel.cs</a>
+│   ├── <a href="./Prefabs/TransactionUI">TransactionUI</a>
+│   │   └── <a href="./Prefabs/TransactionUI/TransactionUI.cs">TransactionUI.cs</a>
+│   ├── <a href="./Prefabs/WorldUI">WorldUI</a>
+│   │   ├── <a href="./Prefabs/WorldUI/WorldUIAnimation.cs">WorldUIAnimation.cs</a>
+│   │   └── <a href="./Prefabs/WorldUI/WorldUIHandler.cs">WorldUIHandler.cs</a>
+│   ├── <a href="./Prefabs/ZombieDeathParticle">ZombieDeathParticle</a>
+│   │   └── <a href="./Prefabs/ZombieDeathParticle/CoinParticleCreator.cs">CoinParticleCreator.cs</a>
+│   └── <a href="./Prefabs/ZombieSpawner">ZombieSpawner</a>
+│       ├── <a href="./Prefabs/ZombieSpawner/ZombieSpawner.cs">ZombieSpawner.cs</a>
+│       ├── <a href="./Prefabs/ZombieSpawner/ZombieType.cs">ZombieType.cs</a>
+│       └── <a href="./Prefabs/ZombieSpawner/ZombieWaveSpawnProfileSO.cs">ZombieWaveSpawnProfileSO.cs</a>
+├── <a href="./Scenes">Scenes</a>
+│   ├── <a href="./Scenes/KKW">KKW</a>
+│   │   └── <a href="./Scenes/KKW/Turret_Scene">Turret_Scene</a>
+│   │       ├── <a href="./Scenes/KKW/Turret_Scene/Editor">Editor</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.Calculation.cs">TurretBalanceReportWindow.Calculation.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.cs">TurretBalanceReportWindow.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.Csv.cs">TurretBalanceReportWindow.Csv.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.CurrencyProjection.cs">TurretBalanceReportWindow.CurrencyProjection.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.Graph.cs">TurretBalanceReportWindow.Graph.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.Input.cs">TurretBalanceReportWindow.Input.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.Obstacle.Calculation.cs">TurretBalanceReportWindow.Obstacle.Calculation.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.Obstacle.Table.cs">TurretBalanceReportWindow.Obstacle.Table.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.Table.cs">TurretBalanceReportWindow.Table.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.TableModel.cs">TurretBalanceReportWindow.TableModel.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretBalanceReportWindow.Types.cs">TurretBalanceReportWindow.Types.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretDataCsvEditorTool.cs">TurretDataCsvEditorTool.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretEconomySimulationCalculator.cs">TurretEconomySimulationCalculator.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretEconomyValidator.cs">TurretEconomyValidator.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretEvolutionCostCsvEditorTool.cs">TurretEvolutionCostCsvEditorTool.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretEvolutionGraphBuilder.cs">TurretEvolutionGraphBuilder.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretSpecialAbilityDpsCalculator.cs">TurretSpecialAbilityDpsCalculator.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretSpeciesDetailCalculator.cs">TurretSpeciesDetailCalculator.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretWaveClearRankingCalculator.cs">TurretWaveClearRankingCalculator.cs</a>
+│   │       │   ├── <a href="./Scenes/KKW/Turret_Scene/Editor/TurretWaveRuntimeAnalyzer.cs">TurretWaveRuntimeAnalyzer.cs</a>
+│   │       │   └── <a href="./Scenes/KKW/Turret_Scene/Editor/ZombieRewardExpectationCalculator.cs">ZombieRewardExpectationCalculator.cs</a>
+│   │       └── <a href="./Scenes/KKW/Turret_Scene/Scripts">Scripts</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/Placement">Placement</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/Placement/TurretBaseSlot.cs">TurretBaseSlot.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/Placement/TurretPlacementController.cs">TurretPlacementController.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/Placement/TurretPlacementPreview.cs">TurretPlacementPreview.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/Placement/TurretPlacementSlotUI.cs">TurretPlacementSlotUI.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/Placement/TurretPlacementUI.cs">TurretPlacementUI.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/Placement/TurretSelectionLayerUtility.cs">TurretSelectionLayerUtility.cs</a>
+│   │           │   └── <a href="./Scenes/KKW/Turret_Scene/Scripts/Placement/TurretShopEntrySO.cs">TurretShopEntrySO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI">UI</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/DamageMeter">DamageMeter</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/DamageMeter/TurretDamageMeterColorProfileSO.cs">TurretDamageMeterColorProfileSO.cs</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/DamageMeter/TurretDamageMeterManager.cs">TurretDamageMeterManager.cs</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/DamageMeter/TurretDamageMeterRowUI.cs">TurretDamageMeterRowUI.cs</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/DamageMeter/TurretDamageMeterSource.cs">TurretDamageMeterSource.cs</a>
+│   │           │   │   └── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/DamageMeter/TurretDamageMeterUI.cs">TurretDamageMeterUI.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TechTree">TechTree</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TechTree/TurretTechTreeDetailPopupUI.cs">TurretTechTreeDetailPopupUI.cs</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TechTree/TurretTechTreeLineUI.cs">TurretTechTreeLineUI.cs</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TechTree/TurretTechTreeNodeState.cs">TurretTechTreeNodeState.cs</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TechTree/TurretTechTreeNodeUI.cs">TurretTechTreeNodeUI.cs</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TechTree/TurretTechTreeOpenButton.cs">TurretTechTreeOpenButton.cs</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TechTree/TurretTechTreeUIController.cs">TurretTechTreeUIController.cs</a>
+│   │           │   │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TechTree/TurretTechTreeViewProfileSO.cs">TurretTechTreeViewProfileSO.cs</a>
+│   │           │   │   └── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TechTree/TurretTechTreeZoomController.cs">TurretTechTreeZoomController.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretCurrencyDisplayUtility.cs">TurretCurrencyDisplayUtility.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretDetailPopupUI.cs">TurretDetailPopupUI.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretEvolutionCandidatePressForwarder.cs">TurretEvolutionCandidatePressForwarder.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretEvolutionPopupUI.cs">TurretEvolutionPopupUI.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretFeedbackPopupSettings.cs">TurretFeedbackPopupSettings.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretInfoPopupUI.cs">TurretInfoPopupUI.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretItemDescriptionOpenButton.cs">TurretItemDescriptionOpenButton.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretItemDescriptionPopupUI.cs">TurretItemDescriptionPopupUI.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretItemDescriptionRelationSlotUI.cs">TurretItemDescriptionRelationSlotUI.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretPopupPageUI.cs">TurretPopupPageUI.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretSelectionContext.cs">TurretSelectionContext.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretSelectionUIController.cs">TurretSelectionUIController.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretSelectPopupUI.cs">TurretSelectPopupUI.cs</a>
+│   │           │   ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretSkillPopupUI.cs">TurretSkillPopupUI.cs</a>
+│   │           │   └── <a href="./Scenes/KKW/Turret_Scene/Scripts/UI/TurretUpgradePopupUI.cs">TurretUpgradePopupUI.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/BeamAttackProfileSO.cs">BeamAttackProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/BeamFiringEvent.cs">BeamFiringEvent.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/DetachedPooledChildReturner.cs">DetachedPooledChildReturner.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ElectroChainCoreLineEffect.cs">ElectroChainCoreLineEffect.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ElectroChainLightningUtility.cs">ElectroChainLightningUtility.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ElectroChainLinkAnchorTracker.cs">ElectroChainLinkAnchorTracker.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ElectroChainLinkEffectUtility.cs">ElectroChainLinkEffectUtility.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ElectroStatusProfileSO.cs">ElectroStatusProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ElectroTurretStatGrowthProfileSO.cs">ElectroTurretStatGrowthProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/EnemyPatrolMover.cs">EnemyPatrolMover.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/FrostFreezeExplosionDamageTimer.cs">FrostFreezeExplosionDamageTimer.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/FrostStatusEffectUtility.cs">FrostStatusEffectUtility.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/FrostStatusProfileSO.cs">FrostStatusProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/HovlProjectileHitEffectUtility.cs">HovlProjectileHitEffectUtility.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/HovlProjectilePierceGuard.cs">HovlProjectilePierceGuard.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/IElectroStatusEffectReceiver.cs">IElectroStatusEffectReceiver.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/IFrostStatusEffectReceiver.cs">IFrostStatusEffectReceiver.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/IgnitionConeDetector.cs">IgnitionConeDetector.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/IgnitionDamageApplier.cs">IgnitionDamageApplier.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/IgnitionStatusProfileSO.cs">IgnitionStatusProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/IgnitionTurretStatGrowthProfileSO.cs">IgnitionTurretStatGrowthProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/IIgnitionStatusEffectReceiver.cs">IIgnitionStatusEffectReceiver.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/IPoisonStatusEffectReceiver.cs">IPoisonStatusEffectReceiver.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ITurretRuntimeStatReceiver.cs">ITurretRuntimeStatReceiver.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ITurretStatusProfileReceiver.cs">ITurretStatusProfileReceiver.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/LevelHoldButton.cs">LevelHoldButton.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/PoisonDeathBurstEffectUtility.cs">PoisonDeathBurstEffectUtility.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/PoisonDeathBurstProfileSO.cs">PoisonDeathBurstProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/PoisonStatusProfileSO.cs">PoisonStatusProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/PoisonStatusRuntimeUtility.cs">PoisonStatusRuntimeUtility.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/PoisonTurretStatGrowthProfileSO.cs">PoisonTurretStatGrowthProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/PooledEffectReturner.cs">PooledEffectReturner.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/PooledProjectileReturner.cs">PooledProjectileReturner.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ProjectileBoundary.cs">ProjectileBoundary.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ProjectileComponentCache.cs">ProjectileComponentCache.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ProjectileDamageDealer.cs">ProjectileDamageDealer.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/ProjectileHitDetector.cs">ProjectileHitDetector.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TestDamageableTarget.cs">TestDamageableTarget.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretAimPointUtility.cs">TurretAimPointUtility.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretDamagePolishProfileSO.cs">TurretDamagePolishProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretDamagePolishResult.cs">TurretDamagePolishResult.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretDefinitionRuntimeController.cs">TurretDefinitionRuntimeController.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretDefinitionSO.cs">TurretDefinitionSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretEconomyLogUtility.cs">TurretEconomyLogUtility.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretEngineerBuffReceiver.cs">TurretEngineerBuffReceiver.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretEvolutionProgressionSO.cs">TurretEvolutionProgressionSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretEvolutionRuntimeUI.cs">TurretEvolutionRuntimeUI.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretLeadPredictionUtility.cs">TurretLeadPredictionUtility.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretProjectileScaleProgressionSO.cs">TurretProjectileScaleProgressionSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretRangeIndicator.cs">TurretRangeIndicator.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretRankBand.cs">TurretRankBand.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretRankBillboard.cs">TurretRankBillboard.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretRankDisplayController.cs">TurretRankDisplayController.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretRankDisplayProfileSO.cs">TurretRankDisplayProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretRuntimeStat.cs">TurretRuntimeStat.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretStatCalculator.cs">TurretStatCalculator.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretStatGrowthProfileSO.cs">TurretStatGrowthProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretStatProfileApplier.cs">TurretStatProfileApplier.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretStatProfileSO.cs">TurretStatProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretUpgradeCostProfileSO.cs">TurretUpgradeCostProfileSO.cs</a>
+│   │           ├── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretVFXProfileSO.cs">TurretVFXProfileSO.cs</a>
+│   │           └── <a href="./Scenes/KKW/Turret_Scene/Scripts/TurretVFXProgressionSO.cs">TurretVFXProgressionSO.cs</a>
+│   └── <a href="./Scenes/PJY">PJY</a>
+│       ├── <a href="./Scenes/PJY/CubeSpawnTest.cs">CubeSpawnTest.cs</a>
+│       ├── <a href="./Scenes/PJY/EventSystemDebugger.cs">EventSystemDebugger.cs</a>
+│       └── <a href="./Scenes/PJY/ItemDropTest.cs">ItemDropTest.cs</a>
+├── <a href="./Scripts">Scripts</a>
+│   ├── <a href="./Scripts/Audio">Audio</a>
+│   │   ├── <a href="./Scripts/Audio/AudioCueSO.cs">AudioCueSO.cs</a>
+│   │   ├── <a href="./Scripts/Audio/ITurretAudioEventPlayer.cs">ITurretAudioEventPlayer.cs</a>
+│   │   ├── <a href="./Scripts/Audio/PooledAudioSource.cs">PooledAudioSource.cs</a>
+│   │   ├── <a href="./Scripts/Audio/ProjectAudioBus.cs">ProjectAudioBus.cs</a>
+│   │   ├── <a href="./Scripts/Audio/ProjectAudioFeelBridge.cs">ProjectAudioFeelBridge.cs</a>
+│   │   ├── <a href="./Scripts/Audio/ProjectAudioHandle.cs">ProjectAudioHandle.cs</a>
+│   │   ├── <a href="./Scripts/Audio/ProjectAudioManager.cs">ProjectAudioManager.cs</a>
+│   │   ├── <a href="./Scripts/Audio/ProjectAudioPlaybackMode.cs">ProjectAudioPlaybackMode.cs</a>
+│   │   ├── <a href="./Scripts/Audio/ProjectAudioVolumeSlider.cs">ProjectAudioVolumeSlider.cs</a>
+│   │   ├── <a href="./Scripts/Audio/ProjectAudioVolumeTarget.cs">ProjectAudioVolumeTarget.cs</a>
+│   │   ├── <a href="./Scripts/Audio/ProjectBgmPlayer.cs">ProjectBgmPlayer.cs</a>
+│   │   ├── <a href="./Scripts/Audio/TurretAudioController.cs">TurretAudioController.cs</a>
+│   │   ├── <a href="./Scripts/Audio/TurretAudioEvent.cs">TurretAudioEvent.cs</a>
+│   │   ├── <a href="./Scripts/Audio/TurretAudioFireEventRelay.cs">TurretAudioFireEventRelay.cs</a>
+│   │   ├── <a href="./Scripts/Audio/TurretAudioProfileSO.cs">TurretAudioProfileSO.cs</a>
+│   │   └── <a href="./Scripts/Audio/UIButtonAudioFeedback.cs">UIButtonAudioFeedback.cs</a>
+│   ├── <a href="./Scripts/CameraTools">CameraTools</a>
+│   │   ├── <a href="./Scripts/CameraTools/CameraController.cs">CameraController.cs</a>
+│   │   └── <a href="./Scripts/CameraTools/CameraTouchHandler.cs">CameraTouchHandler.cs</a>
+│   ├── <a href="./Scripts/Editor">Editor</a>
+│   │   ├── <a href="./Scripts/Editor/ItemDataEditorTool.cs">ItemDataEditorTool.cs</a>
+│   │   ├── <a href="./Scripts/Editor/RewardCurrencyTypeDrawer.cs">RewardCurrencyTypeDrawer.cs</a>
+│   │   └── <a href="./Scripts/Editor/ZombieBalanceCsvEditorTool.cs">ZombieBalanceCsvEditorTool.cs</a>
+│   ├── <a href="./Scripts/Rewards">Rewards</a>
+│   │   ├── <a href="./Scripts/Rewards/BillboardUtil.cs">BillboardUtil.cs</a>
+│   │   ├── <a href="./Scripts/Rewards/ResourceCost.cs">ResourceCost.cs</a>
+│   │   ├── <a href="./Scripts/Rewards/RewardCurrencyType.cs">RewardCurrencyType.cs</a>
+│   │   ├── <a href="./Scripts/Rewards/RewardEntry.cs">RewardEntry.cs</a>
+│   │   ├── <a href="./Scripts/Rewards/RewardGrantUtility.cs">RewardGrantUtility.cs</a>
+│   │   ├── <a href="./Scripts/Rewards/RewardResult.cs">RewardResult.cs</a>
+│   │   ├── <a href="./Scripts/Rewards/ZombieRewardContext.cs">ZombieRewardContext.cs</a>
+│   │   ├── <a href="./Scripts/Rewards/ZombieRewardModifier.cs">ZombieRewardModifier.cs</a>
+│   │   ├── <a href="./Scripts/Rewards/ZombieRewardProfileSO.cs">ZombieRewardProfileSO.cs</a>
+│   │   ├── <a href="./Scripts/Rewards/ZombieRewardSituation.cs">ZombieRewardSituation.cs</a>
+│   │   ├── <a href="./Scripts/Rewards/ZombieWaveDpsMeasurementProfileSO.cs">ZombieWaveDpsMeasurementProfileSO.cs</a>
+│   │   └── <a href="./Scripts/Rewards/ZombieWaveDpsRuntimeRecorder.cs">ZombieWaveDpsRuntimeRecorder.cs</a>
+│   ├── <a href="./Scripts/SellerTruck">SellerTruck</a>
+│   │   └── <a href="./Scripts/SellerTruck/SellerTruckMovement.cs">SellerTruckMovement.cs</a>
+│   ├── <a href="./Scripts/Singleton">Singleton</a>
+│   │   ├── <a href="./Scripts/Singleton/DisplayManager">DisplayManager</a>
+│   │   │   └── <a href="./Scripts/Singleton/DisplayManager/DisplayManager.cs">DisplayManager.cs</a>
+│   │   ├── <a href="./Scripts/Singleton/DropItemManager">DropItemManager</a>
+│   │   │   └── <a href="./Scripts/Singleton/DropItemManager/DropItemManager.cs">DropItemManager.cs</a>
+│   │   ├── <a href="./Scripts/Singleton/FeelManager">FeelManager</a>
+│   │   │   └── <a href="./Scripts/Singleton/FeelManager/FeelManager.cs">FeelManager.cs</a>
+│   │   ├── <a href="./Scripts/Singleton/GameManager">GameManager</a>
+│   │   │   └── <a href="./Scripts/Singleton/GameManager/GameManager.cs">GameManager.cs</a>
+│   │   ├── <a href="./Scripts/Singleton/MemoryPool">MemoryPool</a>
+│   │   │   ├── <a href="./Scripts/Singleton/MemoryPool/MemoryPool.cs">MemoryPool.cs</a>
+│   │   │   └── <a href="./Scripts/Singleton/MemoryPool/MemoryPoolPrewarmer.cs">MemoryPoolPrewarmer.cs</a>
+│   │   ├── <a href="./Scripts/Singleton/SaveManager">SaveManager</a>
+│   │   │   ├── <a href="./Scripts/Singleton/SaveManager/ISaveable.cs">ISaveable.cs</a>
+│   │   │   └── <a href="./Scripts/Singleton/SaveManager/SaveManager.cs">SaveManager.cs</a>
+│   │   └── <a href="./Scripts/Singleton/UISoundPlayer">UISoundPlayer</a>
+│   │       └── <a href="./Scripts/Singleton/UISoundPlayer/UISoundPlayer.cs">UISoundPlayer.cs</a>
+│   ├── <a href="./Scripts/StatusEffects">StatusEffects</a>
+│   │   ├── <a href="./Scripts/StatusEffects/Editor">Editor</a>
+│   │   │   └── <a href="./Scripts/StatusEffects/Editor/StatusEffectVisualSlotDrawer.cs">StatusEffectVisualSlotDrawer.cs</a>
+│   │   ├── <a href="./Scripts/StatusEffects/ElectroShockStackVisualFader.cs">ElectroShockStackVisualFader.cs</a>
+│   │   ├── <a href="./Scripts/StatusEffects/ElectroShockStackVisualModeController.cs">ElectroShockStackVisualModeController.cs</a>
+│   │   ├── <a href="./Scripts/StatusEffects/ElectroStatusRuntime.cs">ElectroStatusRuntime.cs</a>
+│   │   ├── <a href="./Scripts/StatusEffects/FrostStatusRuntime.cs">FrostStatusRuntime.cs</a>
+│   │   ├── <a href="./Scripts/StatusEffects/IgnitionStatusRuntime.cs">IgnitionStatusRuntime.cs</a>
+│   │   ├── <a href="./Scripts/StatusEffects/PoisonStatusRuntime.cs">PoisonStatusRuntime.cs</a>
+│   │   ├── <a href="./Scripts/StatusEffects/StatusEffectVisualAlphaFader.cs">StatusEffectVisualAlphaFader.cs</a>
+│   │   └── <a href="./Scripts/StatusEffects/StatusEffectVisualController.cs">StatusEffectVisualController.cs</a>
+│   ├── <a href="./Scripts/Targeting">Targeting</a>
+│   │   ├── <a href="./Scripts/Targeting/ElectroShockTargetCandidateFilter.cs">ElectroShockTargetCandidateFilter.cs</a>
+│   │   ├── <a href="./Scripts/Targeting/FrostFreezeSuppressedTargetCandidateFilter.cs">FrostFreezeSuppressedTargetCandidateFilter.cs</a>
+│   │   ├── <a href="./Scripts/Targeting/IAimPointProvider.cs">IAimPointProvider.cs</a>
+│   │   ├── <a href="./Scripts/Targeting/IgnitionBurningTargetCandidateFilter.cs">IgnitionBurningTargetCandidateFilter.cs</a>
+│   │   ├── <a href="./Scripts/Targeting/ITargetCandidateFilter.cs">ITargetCandidateFilter.cs</a>
+│   │   ├── <a href="./Scripts/Targeting/PoisonLethalTargetCandidateFilter.cs">PoisonLethalTargetCandidateFilter.cs</a>
+│   │   └── <a href="./Scripts/Targeting/StickyCurrentTargetRetentionFilter.cs">StickyCurrentTargetRetentionFilter.cs</a>
+│   ├── <a href="./Scripts/UI">UI</a>
+│   │   ├── <a href="./Scripts/UI/DropItemGetLog">DropItemGetLog</a>
+│   │   │   ├── <a href="./Scripts/UI/DropItemGetLog/DropItemGetLog.cs">DropItemGetLog.cs</a>
+│   │   │   └── <a href="./Scripts/UI/DropItemGetLog/DropItemGetLogText.cs">DropItemGetLogText.cs</a>
+│   │   ├── <a href="./Scripts/UI/Editor">Editor</a>
+│   │   │   └── <a href="./Scripts/UI/Editor/GameOverPanelUICreator.cs">GameOverPanelUICreator.cs</a>
+│   │   ├── <a href="./Scripts/UI/ItemUI">ItemUI</a>
+│   │   │   └── <a href="./Scripts/UI/ItemUI/ItemIndicator.cs">ItemIndicator.cs</a>
+│   │   ├── <a href="./Scripts/UI/MenuUI">MenuUI</a>
+│   │   │   ├── <a href="./Scripts/UI/MenuUI/MainMenuButton.cs">MainMenuButton.cs</a>
+│   │   │   └── <a href="./Scripts/UI/MenuUI/MainMenuUI.cs">MainMenuUI.cs</a>
+│   │   ├── <a href="./Scripts/UI/PowerSavingButton">PowerSavingButton</a>
+│   │   │   └── <a href="./Scripts/UI/PowerSavingButton/PowerSavingButton.cs">PowerSavingButton.cs</a>
+│   │   ├── <a href="./Scripts/UI/PowerSavingSwitcher">PowerSavingSwitcher</a>
+│   │   │   └── <a href="./Scripts/UI/PowerSavingSwitcher/PowerSavingSwitcher.cs">PowerSavingSwitcher.cs</a>
+│   │   ├── <a href="./Scripts/UI/TimeScaleButton">TimeScaleButton</a>
+│   │   │   └── <a href="./Scripts/UI/TimeScaleButton/TimeScaleButton.cs">TimeScaleButton.cs</a>
+│   │   ├── <a href="./Scripts/UI/TransactionUI">TransactionUI</a>
+│   │   │   └── <a href="./Scripts/UI/TransactionUI/TransactionPopup.cs">TransactionPopup.cs</a>
+│   │   ├── <a href="./Scripts/UI/WaveUI">WaveUI</a>
+│   │   │   ├── <a href="./Scripts/UI/WaveUI/WaveIndicator.cs">WaveIndicator.cs</a>
+│   │   │   └── <a href="./Scripts/UI/WaveUI/WavePopup.cs">WavePopup.cs</a>
+│   │   ├── <a href="./Scripts/UI/WorldUI">WorldUI</a>
+│   │   │   └── <a href="./Scripts/UI/WorldUI/WorldButton.cs">WorldButton.cs</a>
+│   │   ├── <a href="./Scripts/UI/BillboardCanvas.cs">BillboardCanvas.cs</a>
+│   │   ├── <a href="./Scripts/UI/GameOverPanelUI.cs">GameOverPanelUI.cs</a>
+│   │   ├── <a href="./Scripts/UI/TouchBackHandler.cs">TouchBackHandler.cs</a>
+│   │   ├── <a href="./Scripts/UI/UIAnimationValues.cs">UIAnimationValues.cs</a>
+│   │   ├── <a href="./Scripts/UI/UIManager.cs">UIManager.cs</a>
+│   │   ├── <a href="./Scripts/UI/WarningPopup.cs">WarningPopup.cs</a>
+│   │   └── <a href="./Scripts/UI/WarningPopupManager.cs">WarningPopupManager.cs</a>
+│   ├── <a href="./Scripts/DamageInfo.cs">DamageInfo.cs</a>
+│   ├── <a href="./Scripts/DamagePopupPolicy.cs">DamagePopupPolicy.cs</a>
+│   ├── <a href="./Scripts/DamagePopupPolicyProfileSO.cs">DamagePopupPolicyProfileSO.cs</a>
+│   ├── <a href="./Scripts/DamagePopupPolicyResolver.cs">DamagePopupPolicyResolver.cs</a>
+│   ├── <a href="./Scripts/DamagePopupSettings.cs">DamagePopupSettings.cs</a>
+│   ├── <a href="./Scripts/DamagePopupSpawner.cs">DamagePopupSpawner.cs</a>
+│   ├── <a href="./Scripts/DamagePopupTargetType.cs">DamagePopupTargetType.cs</a>
+│   ├── <a href="./Scripts/DamagePopupType.cs">DamagePopupType.cs</a>
+│   ├── <a href="./Scripts/DisableAfterSeconds.cs">DisableAfterSeconds.cs</a>
+│   ├── <a href="./Scripts/DnpDamagePopupBackend.cs">DnpDamagePopupBackend.cs</a>
+│   └── <a href="./Scripts/IDamagePopupRenderBackend.cs">IDamagePopupRenderBackend.cs</a>
+├── <a href="./PROJECT_README.cs">PROJECT_README.cs</a>
+├── <a href="./REWARD_CURRENCY_SYSTEM_PLAN.cs">REWARD_CURRENCY_SYSTEM_PLAN.cs</a>
+├── <a href="./STATUS_EFFECT_SYSTEM_README.cs">STATUS_EFFECT_SYSTEM_README.cs</a>
+├── <a href="./TeamCodingConvention.cs">TeamCodingConvention.cs</a>
+├── <a href="./TURRET_DATA_STRUCTURE_PLAN.cs">TURRET_DATA_STRUCTURE_PLAN.cs</a>
+└── <a href="./TURRET_UI_REWORK_PLAN.cs">TURRET_UI_REWORK_PLAN.cs</a>
+</pre>
