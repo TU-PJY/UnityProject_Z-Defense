@@ -1,4 +1,47 @@
-# 프로젝트 스크립트 트리  
+# Project Z-Defense
+<img width="400" height="256" alt="Image" src="https://github.com/user-attachments/assets/54378505-5de7-439b-9a16-eaec3bb6e5d1" />  
+
+<br><br>
+  
+## 프로젝트 개요
+- **개발 기간:** 2026.5.29 - 2026.7.23  
+- **개발 인원:** 3명  
+- **장르:** 3D 탑뷰 디펜스 Idle 게임  
+- **플랫폼:** Android  
+- **개발 툴:** Unity 2026
+- **형상 관리:** Git/GitHub
+
+<br>
+
+## 프로젝트 소개
+- **기지 방어**  
+  좀비들은 기지를 파괴하기 위해 달려듭니다.  
+  플레이어는 기지에 터렛과 방벽을 설치하여 좀비들로부터 기지를 방어해야 합니다.  
+  <br>  
+- **자동 전투**  
+  기지에 설치한 터렛이 기지로 접근하는 좀비들을 향해 자동으로 사격합니다.  
+  <br>  
+- **업그레이드**  
+  점차 강해지는 좀비에 대비하여, 좀비를 처치하여 자원을 얻거나 생존자와 거래하여 자원을 얻고, 자원을 소모하여 방벽과 터렛을 업그레이드 할 수 있습니다.
+
+<br>
+
+
+## 주요 소스 코드
+| 항목 | 소스 코드 |
+| --- | --- |
+| Inventory System / Item Meta Data | [InventorySystem.cs](./Assets/__PROJECT__/Prefabs/InventorySystem/InventorySystem.cs)<br>[ItemMetaDataListSo.cs](./Assets/__PROJECT__/Prefabs/InventorySystem/ItemMetaDataListSo.cs)<br>[ItemMetaDataSo.cs](./Assets/__PROJECT__/Prefabs/InventorySystem/ItemMetaDataSo.cs) |
+| Inventory UI | [InventoryUI.cs](./Assets/__PROJECT__/Prefabs/InventoryUI/InventoryUI.cs) |
+| Game Manager | [GameManager.cs](./Assets/__PROJECT__/Scripts/Singleton/GameManager/GameManager.cs) |
+| Display Manager | [DisplayManager.cs](./Assets/__PROJECT__/Scripts/Singleton/DisplayManager/DisplayManager.cs) | 
+| Normal Zombie |  [NormalZombie.cs](./Assets/__PROJECT__/Prefabs/Damageable/NormalZombie/NormalZombie.cs)<br>[NormalZombieAttackCollider.cs](./Assets/__PROJECT__/Prefabs/Damageable/NormalZombie/NormalZombieAttackCollider.cs)<br>[NormalZombieSpec.cs](./Assets/__PROJECT__/Prefabs/Damageable/NormalZombie/NormalZombieSpec.cs) |
+| Zombie Spwaner | [ZombieSpawner.cs](./Assets/__PROJECT__/Prefabs/ZombieSpawner/ZombieSpawner.cs) |
+| World UI | [WorldButton.cs](./Assets/__PROJECT__/Scripts/UI/WorldUI/WorldButton.cs) |
+| Camera Controller | [CameraController.cs](./Assets/__PROJECT__/Scripts/CameraTools/CameraController.cs)<br>[CameraTouchHandler.cs](./Assets/__PROJECT__/Scripts/CameraTools/CameraTouchHandler.cs) |
+
+<br>
+
+## 전체 소스 코드 트리
 * 에셋 및 라이브러리 스크립트는 포함되어있지 않습니다.
 * 본 리포지토리에는 유료 에셋 파일이 포함되어 있지 않습니다. 프로젝트를 열어야 할 경우 별도로 유료 에셋 파일을 요청하셔야합니다.
 
