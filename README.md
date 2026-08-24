@@ -13,7 +13,7 @@
 
 <br>
 
-## 프로젝트 소개
+## 게임 소개
 - **기지 방어**  
   좀비들은 기지를 파괴하기 위해 달려듭니다.  
   플레이어는 기지에 터렛과 방벽을 설치하여 좀비들로부터 기지를 방어해야 합니다.  
@@ -26,6 +26,28 @@
 
 <br>
 
+## 주요 요소 소개
+- **좀비**  
+  본 게임에서 막아내야하는 몬스터들입니다. 웨이브가 증가할 수록 공격력과 체력이 강해지고 스폰되는 숫자가 증가합니다.  
+  일정 웨이브마다 마지막에 스폰되는 좀비는 보스 좀비로, 일반 좀비보다 훨씬 더 강력한 체력과 공격력, 특수 스킬을 보유하고 있습니다.  
+  <br>  
+- **터렛**  
+  플레이어가 기지에 설치할 수 있는 자동 공격 방어 수단입니다. 자원을 소모하여 업그레이드 할 수 있으며, 업그레이드는 총 4회의 진화와 4가지 테크 트리로 구성되어있습니다.  
+  <br>  
+- **생존자**  
+  매 웨이브 시작 시 일정 확률로 기지로 대피하는 생존자입니다. 플레이어는 생존자들을 치료한 후 방벽을 수리하게 하거나, 터렛에 탑승시켜 터렛의 공격력을 강화하는 방향으로 활용할 수 있습니다.  
+
+<br>
+
+## 주요 스크린샷
+<p>
+<img width="32%" alt="Image" src="https://github.com/user-attachments/assets/55b9eff3-9539-4353-8f66-2fa2da9685d0" />
+<img width="32%" alt="Image" src="https://github.com/user-attachments/assets/f6b2ecda-9c20-45a4-941c-778bc4b99153" />
+</p>
+<img width="65%" alt="Image" src="https://github.com/user-attachments/assets/21dcaa81-27fc-4178-bdc6-5838acf52e7c" />
+<img width="653" height="400" alt="Image" src="https://github.com/user-attachments/assets/038834bf-c8d5-4849-a3ed-f6a55e8cf341" />
+
+<br><br>
 
 ## 주요 소스 코드
 | 항목 | 소스 코드 |
