@@ -57,7 +57,7 @@
 | Game Manager | [GameManager.cs](./Assets/__PROJECT__/Scripts/Singleton/GameManager/GameManager.cs) |
 | Display Manager | [DisplayManager.cs](./Assets/__PROJECT__/Scripts/Singleton/DisplayManager/DisplayManager.cs) | 
 | Normal Zombie |  [NormalZombie.cs](./Assets/__PROJECT__/Prefabs/Damageable/NormalZombie/NormalZombie.cs)<br>[NormalZombieAttackCollider.cs](./Assets/__PROJECT__/Prefabs/Damageable/NormalZombie/NormalZombieAttackCollider.cs)<br>[NormalZombieSpec.cs](./Assets/__PROJECT__/Prefabs/Damageable/NormalZombie/NormalZombieSpec.cs) |
-| Zombie Spwaner | [ZombieSpawner.cs](./Assets/__PROJECT__/Prefabs/ZombieSpawner/ZombieSpawner.cs) |
+| Zombie Spwaner | [ZombieSpawner.cs](./Assets/__PROJECT__/Prefabs/ZombieSpawner/ZombieSpawner.cs)<br>[ZombieWaveSpawnProfileSO.cs](./Assets/__PROJECT__/Prefabs/ZombieSpawner/ZombieWaveSpawnProfileSO.cs) |
 | World UI | [WorldButton.cs](./Assets/__PROJECT__/Scripts/UI/WorldUI/WorldButton.cs) |
 | Camera Controller | [CameraController.cs](./Assets/__PROJECT__/Scripts/CameraTools/CameraController.cs)<br>[CameraTouchHandler.cs](./Assets/__PROJECT__/Scripts/CameraTools/CameraTouchHandler.cs) |
 
