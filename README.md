@@ -1,9 +1,9 @@
-# Project Z-Defense
+# **Project Z-Defense**
 <img width="400" height="256" alt="Image" src="https://github.com/user-attachments/assets/54378505-5de7-439b-9a16-eaec3bb6e5d1" />  
 
 <br><br>
   
-## 프로젝트 개요
+# **프로젝트 개요**
 - **개발 기간:** 2026.5.29 - 2026.7.23  
 - **개발 인원:** 3명  
 - **장르:** 3D 탑뷰 디펜스 Idle 게임  
@@ -13,7 +13,7 @@
 
 <br>
 
-## 게임 소개
+# **게임 소개**
 - **기지 방어**  
   좀비들은 기지를 파괴하기 위해 달려듭니다.  
   플레이어는 기지에 터렛과 방벽을 설치하여 좀비들로부터 기지를 방어해야 합니다.  
@@ -26,7 +26,7 @@
 
 <br>
 
-## 주요 요소 소개
+# **주요 요소 소개**
 - **좀비**  
   본 게임에서 막아내야하는 몬스터들입니다. 웨이브가 증가할 수록 공격력과 체력이 강해지고 스폰되는 숫자가 증가합니다.  
   일정 웨이브마다 마지막에 스폰되는 좀비는 보스 좀비로, 일반 좀비보다 훨씬 더 강력한 체력과 공격력, 특수 스킬을 보유하고 있습니다.  
@@ -39,17 +39,17 @@
 
 <br>
 
-## 주요 스크린샷
+# **주요 스크린샷**
 <p>
 <img width="32%" alt="Image" src="https://github.com/user-attachments/assets/55b9eff3-9539-4353-8f66-2fa2da9685d0" />
 <img width="32%" alt="Image" src="https://github.com/user-attachments/assets/f6b2ecda-9c20-45a4-941c-778bc4b99153" />
 </p>
 <img width="65%" alt="Image" src="https://github.com/user-attachments/assets/21dcaa81-27fc-4178-bdc6-5838acf52e7c" />
-<img width="653" height="400" alt="Image" src="https://github.com/user-attachments/assets/038834bf-c8d5-4849-a3ed-f6a55e8cf341" />
+<img width="65%" alt="Image" src="https://github.com/user-attachments/assets/038834bf-c8d5-4849-a3ed-f6a55e8cf341" />
 
 <br><br>
 
-## 주요 소스 코드
+# **주요 소스 코드**
 | 항목 | 소스 코드 |
 | --- | --- |
 | Inventory System / Item Meta Data | [InventorySystem.cs](./Assets/__PROJECT__/Prefabs/InventorySystem/InventorySystem.cs)<br>[ItemMetaDataListSo.cs](./Assets/__PROJECT__/Prefabs/InventorySystem/ItemMetaDataListSo.cs)<br>[ItemMetaDataSo.cs](./Assets/__PROJECT__/Prefabs/InventorySystem/ItemMetaDataSo.cs) |
@@ -62,6 +62,10 @@
 | Camera Controller | [CameraController.cs](./Assets/__PROJECT__/Scripts/CameraTools/CameraController.cs)<br>[CameraTouchHandler.cs](./Assets/__PROJECT__/Scripts/CameraTools/CameraTouchHandler.cs) |
 
 <br>
+
+<details>
+<summary><h2>전체 소스 코드 트리 보기</h2></summary>
+<div markdown="1">
 
 ## 전체 소스 코드 트리
 * 에셋 및 라이브러리 스크립트는 포함되어있지 않습니다.
@@ -406,3 +410,6 @@
 * 📄 [TeamCodingConvention.cs](./Assets/__PROJECT__/TeamCodingConvention.cs)
 * 📄 [TURRET_DATA_STRUCTURE_PLAN.cs](./Assets/__PROJECT__/TURRET_DATA_STRUCTURE_PLAN.cs)
 * 📄 [TURRET_UI_REWORK_PLAN.cs](./Assets/__PROJECT__/TURRET_UI_REWORK_PLAN.cs)
+
+</div>
+</details>
