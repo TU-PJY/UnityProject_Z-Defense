@@ -39,13 +39,20 @@
 
 <br>
 
-# **주요 스크린샷**
+<details>
+<summary><h2>주요 스크린샷 보기</h2></summary>
+<div markdown="1">  
+  
+## 주요 스크린샷
 <p>
 <img width="32%" alt="Image" src="https://github.com/user-attachments/assets/55b9eff3-9539-4353-8f66-2fa2da9685d0" />
 <img width="32%" alt="Image" src="https://github.com/user-attachments/assets/f6b2ecda-9c20-45a4-941c-778bc4b99153" />
 </p>
 <img width="65%" alt="Image" src="https://github.com/user-attachments/assets/21dcaa81-27fc-4178-bdc6-5838acf52e7c" />
 <img width="65%" alt="Image" src="https://github.com/user-attachments/assets/038834bf-c8d5-4849-a3ed-f6a55e8cf341" />
+
+</div>
+</details>
 
 <br><br>
 
